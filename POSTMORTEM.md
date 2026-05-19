@@ -55,6 +55,13 @@ content so the final review can turn observations into DA CLI fixes or docs.
    noise to find the meaningful content change. A structural diff mode for EDS
    source documents would make this safer.
 
+10. **Content, code, preview, and live are four distinct states.**
+    After DA content was committed and GitHub code was pushed, the public preview
+    still returned a 404 until `da deploy pages / --branch main --commit` ran.
+    The CLI made the two-phase model clear once discovered, but the happy path
+    should explicitly sequence content write, code push, preview, publish, and
+    verification.
+
 ## Commands Worth Capturing In Docs
 
 ```sh
@@ -65,6 +72,7 @@ da site info --org somarc --repo fluffyjaws-eds fluffyjaws-eds
 da content put / drafts/index.html
 da content put /nav drafts/nav.html
 da content put /footer drafts/footer.html
+da deploy pages / --branch main --commit
 da design audit http://localhost:3000/drafts/index.html
 npm run lint
 ```
