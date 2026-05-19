@@ -135,6 +135,19 @@ export default async function decorate(block) {
   const brandLink = navBrand?.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
+    brandLink.classList.add('nav-brand-link');
+    const brandText = brandLink.textContent.trim();
+    brandLink.textContent = '';
+    const avatar = document.createElement('img');
+    avatar.className = 'nav-brand-avatar';
+    avatar.src = '/icons/fluffyjaws-avatar.png';
+    avatar.alt = '';
+    avatar.width = 40;
+    avatar.height = 40;
+    avatar.loading = 'eager';
+    const label = document.createElement('span');
+    label.textContent = brandText;
+    brandLink.append(avatar, label);
     const buttonWrapper = brandLink.closest('.button-container, .button-wrapper');
     if (buttonWrapper) buttonWrapper.className = '';
   }
