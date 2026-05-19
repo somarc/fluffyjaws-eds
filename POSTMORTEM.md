@@ -62,6 +62,14 @@ content so the final review can turn observations into DA CLI fixes or docs.
     should explicitly sequence content write, code push, preview, publish, and
     verification.
 
+11. **Media needs an ownership decision, not a default bucket.**
+    DA/R2 is the better home for author-owned content media that editors should
+    replace without a code release. Git `media/` is pragmatic for
+    implementation-owned brand chrome, such as a hero animation tied to a custom
+    block and design system. The CLI should make this choice explicit: content
+    media goes through the author/media bus, implementation media goes through
+    the code bus with the block code that depends on it.
+
 ## Commands Worth Capturing In Docs
 
 ```sh
@@ -72,6 +80,7 @@ da site info --org somarc --repo fluffyjaws-eds fluffyjaws-eds
 da content put / drafts/index.html
 da content put /nav drafts/nav.html
 da content put /footer drafts/footer.html
+da code sync media/fluffyjaws-hero.mp4
 da deploy pages / --branch main --commit
 da design audit http://localhost:3000/drafts/index.html
 npm run lint
