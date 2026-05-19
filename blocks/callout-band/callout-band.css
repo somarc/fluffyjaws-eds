@@ -1,0 +1,67 @@
+.callout-band {
+  display: grid;
+  gap: 36px;
+  align-items: center;
+  border: 1px solid rgb(247 243 234 / 18%);
+  border-radius: 8px;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgb(11 111 124 / 20%), transparent 42%),
+    #181b20;
+  color: #f7f3ea;
+}
+
+.callout-band h2 {
+  margin: 0;
+  color: inherit;
+  font-size: 38px;
+}
+
+.callout-band p {
+  color: rgb(247 243 234 / 82%);
+}
+
+.callout-band-eyebrow {
+  margin: 0 0 12px;
+  color: #d8eee7;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+}
+
+.callout-band-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(92px, 1fr));
+  gap: 10px;
+}
+
+.callout-band-panel span {
+  min-height: 84px;
+  border: 1px solid rgb(247 243 234 / 18%);
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, rgb(247 243 234 / 18%), transparent 60%),
+    rgb(247 243 234 / 5%);
+}
+
+.callout-band-panel span:nth-child(2) {
+  background:
+    linear-gradient(90deg, rgb(199 79 47 / 35%), transparent 60%),
+    rgb(247 243 234 / 5%);
+}
+
+.callout-band-panel span:nth-child(3) {
+  background:
+    linear-gradient(90deg, rgb(216 238 231 / 28%), transparent 60%),
+    rgb(247 243 234 / 5%);
+}
+
+@media (width >= 900px) {
+  .callout-band {
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    padding: 44px;
+  }
+
+  .callout-band h2 {
+    font-size: 64px;
+  }
+}

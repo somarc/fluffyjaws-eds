@@ -1,6 +1,8 @@
 footer {
-  background-color: var(--light-color);
+  border-top: 1px solid var(--line-color);
+  background-color: var(--surface-color);
   font-size: var(--body-font-size-xs);
+  color: color-mix(in srgb, var(--text-color) 72%, white);
 }
 
 footer .footer > div {

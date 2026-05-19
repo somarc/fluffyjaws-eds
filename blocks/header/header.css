@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
+  border-bottom: 1px solid var(--line-color);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -169,6 +170,7 @@ header nav[aria-expanded='true'] .nav-sections {
 
 header nav .nav-sections ul {
   list-style: none;
+  margin: 0;
   padding-left: 0;
   font-size: var(--body-font-size-s);
 }
@@ -190,6 +192,23 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+  }
+
+  header nav .nav-sections a:any-link {
+    color: color-mix(in srgb, var(--text-color) 82%, white);
+  }
+
+  header nav .nav-sections a:hover,
+  header nav .nav-sections a:focus-visible {
+    color: var(--text-color);
+    text-decoration: none;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -220,12 +239,6 @@ header nav .nav-sections ul > li > ul > li {
     top: unset;
     bottom: 0.5em;
     transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {

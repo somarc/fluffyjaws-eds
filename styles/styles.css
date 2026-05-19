@@ -12,21 +12,26 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #fbfaf7;
+  --light-color: #efeee8;
+  --dark-color: #262a2f;
+  --text-color: #17191d;
+  --link-color: #0b6f7c;
+  --link-hover-color: #084d57;
+  --surface-color: #fffdfa;
+  --line-color: #d9d4c8;
+  --accent-color: #c74f2f;
+  --gold-color: #b6842c;
+  --mint-color: #d8eee7;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
 
   /* heading sizes */
   --heading-font-size-xxl: 55px;
@@ -88,6 +93,13 @@ header {
   height: var(--nav-height);
 }
 
+main {
+  background:
+    linear-gradient(90deg, rgb(23 25 29 / 3.5%) 1px, transparent 1px) 0 0 / 72px 72px,
+    linear-gradient(180deg, rgb(23 25 29 / 3%) 1px, transparent 1px) 0 0 / 72px 72px,
+    var(--background-color);
+}
+
 header .header,
 footer .footer {
   visibility: hidden;
@@ -108,8 +120,9 @@ h6 {
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.05;
   scroll-margin: 40px;
+  letter-spacing: 0;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -179,8 +192,8 @@ button.button {
   max-width: 100%;
   margin: 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  padding: 0.62em 1em;
   font: inherit;
   font-weight: 500;
   line-height: 1.25;
@@ -226,8 +239,8 @@ button.button.primary:disabled:focus-visible {
 
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
+  border-color: var(--line-color);
+  background-color: var(--surface-color);
   color: var(--text-color);
 }
 
@@ -297,7 +310,7 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 72px 0;
 }
 
 main > .section > div {
@@ -308,6 +321,15 @@ main > .section > div {
 
 main > .section:first-of-type {
   margin-top: 0;
+}
+
+main > .section h2 {
+  max-width: 780px;
+  font-size: 36px;
+}
+
+main > .section > div > p {
+  max-width: 780px;
 }
 
 @media (width >= 900px) {
@@ -321,5 +343,22 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  padding: 72px 0;
+}
+
+main .section.dark {
+  margin: 0;
+  padding: 72px 0;
+  background: #181b20;
+  color: #f7f3ea;
+}
+
+main .section.dark a:any-link {
+  color: #9dd5d5;
+}
+
+@media (width >= 900px) {
+  main > .section h2 {
+    font-size: 52px;
+  }
 }
